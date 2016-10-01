@@ -22,7 +22,7 @@
     <script src="bower_components/web-animations-js/web-animations.min.js"></script>
     <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
     <link rel="import" href="bower_components/polymerfire/firebase-app.html">
-    <link rel="import" href="note-app.html">
+    <link rel="import" href="tolerance-analysis-app.html">
   </head>
   <body>
     <!--Configure the service worker-->
@@ -37,10 +37,10 @@
       </platinum-sw-cache>
     </platinum-sw-register>
     <!--Configure the Firebase App-->
-    <firebase-app>
+    <firebase-app
       api-key="AIzaSyCXtRcbbRBd0nJ9-zf70UC23JcYfkYd-kg"
       auth-domain="tolerance-analysis.firebaseapp.com"
-      database-url="https://tolerance-analysis.firebaseio.com"
+      database-url="https://tolerance-analysis.firebaseio.com">
     </firebase-app>
     <!--Instantiate web app-->
     <tolerance-analysis-app></tolerance-analysis-app>
