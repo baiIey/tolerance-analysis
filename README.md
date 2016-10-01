@@ -33,6 +33,25 @@ To recap:
 ### Building and Running
  You'll need a static web server to preview the files in the public directory as you are working on them.
 
+#### Run local server
+
+The simplest probably is to use Pythons's built-in http server.
+
+If you have [Python](http://python.org/) installed, it should be enough to run this from a command line:
+```
+# Python 2.x
+python -m SimpleHTTPServer
+```
+```
+# Python 3.x
+python -m http.server
+```
+
+This will serve files from the current directory at localhost under port 8000:
+
+http://localhost:8000/
+
+#### Environment
 My current environment consists of [Atom](https://atom.io/), [Chrome Canary](https://www.google.com/chrome/browser/canary.html) and its [Developer Tools](https://developer.chrome.com/devtools), [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en), and [Git](https://git-scm.com/) in the command line.
 
 In sum:
