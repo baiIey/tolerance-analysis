@@ -25,5 +25,16 @@
     <link rel="import" href="note-app.html">
   </head>
   <body>
+    <!--Configure the service worker-->
+    <platinum-sw-register
+      auto-register
+      skip-waiting
+      clients-claim
+      reload-on-install
+      href="sw-import.js">
+      <platinum-sw-cache
+          default-cache-strategy="networkFirst">
+      </platinum-sw-cache>
+    </platinum-sw-register>
   </body>
 </html>
