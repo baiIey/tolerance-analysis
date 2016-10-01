@@ -16,15 +16,19 @@ This allows for a full-fidelity, offline-capable progressive web app.
 * Deployed app to Firebase hosting
 * Made  app installable to the home screen of an Android device
 
-### Dependencies
-* Node.js
-* Bower
-* Firebase CLI
-
-### Contributing
+### Building and Running
  You'll need a static web server to preview the files in the public directory as you are working on them.
+
+My current environment consists of [Atom](https://atom.io/), [Chrome Canary](https://www.google.com/chrome/browser/canary.html) and its [Developer Tools](https://developer.chrome.com/devtools), [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en), and [Git](https://git-scm.com/) in the command line.
+
+In sum:
 
 * A text editor and terminal shell
 * Node.js version 6 or greater
 * A Google account
 * (optional) An Android device with the latest version of Chrome
+
+### Dependencies
+* Node.js
+* Bower
+* Firebase CLI
