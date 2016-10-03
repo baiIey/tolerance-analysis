@@ -51,21 +51,27 @@ This will serve files from the current directory at localhost under port 8000:
 
 http://localhost:8000/
 
+Node.js has a simple HTTP server package. To install:
+```
+npm install http-server -g
+```
+To run:
+```
+http-server .
+```
 #### Environment
 My current environment consists of [Atom](https://atom.io/), [Chrome Canary](https://www.google.com/chrome/browser/canary.html) and its [Developer Tools](https://developer.chrome.com/devtools), [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en), and [Git](https://git-scm.com/) in the command line.
 
 In sum:
 * A text editor and terminal shell
 * Node.js version 6 or greater
-* A Google account
-* (optional) An Android device with the latest version of Chrome
-
-To build:
-* Node.js
 * Bower
 * Firebase CLI
+* (optional) An Android device with the latest version of Chrome
 
 ### Dependencies
+**App** dependencies in `public/index.html`.
+
 **webcomponents-lite.js:** The Web Components polyfill, enabling your web components to have near full fidelity functionality on all browsers, even if they don't support Web Components.
 
 **web-animations.min.js:** The Web Animations polyfill, enabling near full fidelity support for the emerging Web Animations platform specifications, even if they are not supported in the current browser.
@@ -75,3 +81,11 @@ To build:
 **firebase-app.html:** A component that makes it trivial to configure and initialize a Firebase app using only HTML.
 
 **note-app.html:** Contains the core implementation of our app.
+
+**Element** Dependencies in `public/tension-analysis-app.html`.
+
+**na-elements.html:** This document pulls in pre-made view components for building the aesthetics and user interactions of our app.
+
+**app-indexeddb-mirror.html:** This document contains a special element that will help us add offline data access to our Firebase data.
+
+**polymerfire.html:** This document includes all of the elements needed to create a declarative relationship between our views and our Firebase data.

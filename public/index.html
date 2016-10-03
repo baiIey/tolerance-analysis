@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-    <title>Tolerance Analysis - MAESTRO</title>
-    <!--Declare web app manifest -->
+    <title>Notes</title>
     <link rel="manifest" href="manifest.json">
-    <!-- Target older Chrome theme configuration -->
+    <!-- Older Chrome configuration -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Notes">
     <link rel="icon"
@@ -17,32 +16,33 @@
         margin: 0;
       }
     </style>
-    <!--Core dependencies-->
+    <!--Declare app dependencies-->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="bower_components/web-animations-js/web-animations.min.js"></script>
     <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
     <link rel="import" href="bower_components/polymerfire/firebase-app.html">
-    <link rel="import" href="tolerance-analysis-app.html">
+    <link rel="import" href="note-app.html">
   </head>
   <body>
-    <!--Configure the service worker-->
+    <!--Configure service workers-->
     <platinum-sw-register
-      auto-register
-      skip-waiting
-      clients-claim
-      reload-on-install
-      href="sw-import.js">
+        auto-register
+        skip-waiting
+        clients-claim
+        reload-on-install
+        href="sw-import.js">
       <platinum-sw-cache
           default-cache-strategy="networkFirst">
       </platinum-sw-cache>
     </platinum-sw-register>
-    <!--Configure the Firebase App-->
+    <!--Configure the Firebase app-->
     <firebase-app
-      api-key="AIzaSyCXtRcbbRBd0nJ9-zf70UC23JcYfkYd-kg"
-      auth-domain="tolerance-analysis.firebaseapp.com"
-      database-url="https://tolerance-analysis.firebaseio.com">
+        name="notes"
+        api-key="AIzaSyCXtRcbbRBd0nJ9-zf70UC23JcYfkYd-kg"
+        auth-domain="tolerance-analysis.firebaseapp.com"
+        database-url="https://tolerance-analysis.firebaseio.com">
     </firebase-app>
-    <!--Instantiate web app-->
-    <tolerance-analysis-app></tolerance-analysis-app>
+    <!--Instantiate app-->
+    <note-app></note-app>
   </body>
 </html>
