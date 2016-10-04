@@ -8,19 +8,34 @@
     <!-- include shared styles -->
     <style include="note-app-shared-styles"></style>
     <!-- toolbar -->
-    <na-toolbar></na-toolbar>
+    <na-toolbar
+        signed-in="[[signedIn]]"
+        on-sign-out="signOut">
+    </na-toolbar>
     <!-- login screen -->
-    <na-login></na-login>
+    <na-login
+      on-sign-in="signIn"
+      signed-in="[[signedIn]]"
+      disabled="[[!online]]">
+    </na-login>
     <!-- incorporate firebase auth -->
     <firebase-auth
         id="auth"
         app-name="tolerance-analysis"
-        provider="google">
+        provider="google"
+        signed-in="{{signedIn}}"
+        user="{{user}}">
     </firebase-auth>
   </template>
   <script>
     Polymer({
-      is: 'note-app'
+      is: 'note-app',
+
+      behaviors: [Polymer.NoteAppBehavior],
+
+      signIn: function() {
+        this.$.auth.signInWithPopup();
+      }
     });
   </script>
 </dom-module>
