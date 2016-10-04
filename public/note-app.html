@@ -1,12 +1,22 @@
+<!-- Declaring element dependencies -->
 <link rel="import" href="bower_components/note-app/common/note-app/na-elements.html">
 <link rel="import" href="bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="bower_components/polymerfire/polymerfire.html">
 
 <dom-module id="note-app">
   <template>
+    <!-- include shared styles -->
     <style include="note-app-shared-styles"></style>
+    <!-- toolbar -->
     <na-toolbar></na-toolbar>
+    <!-- login screen -->
     <na-login></na-login>
+    <!-- incorporate firebase auth -->
+    <firebase-auth
+        id="auth"
+        app-name="tolerance-analysis"
+        provider="google">
+    </firebase-auth>
   </template>
   <script>
     Polymer({
