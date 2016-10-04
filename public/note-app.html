@@ -39,6 +39,13 @@
         note="{{editableNote}}"
         on-close="commitChange">
     </na-editor>
+    <!-- handle changes to note data -->
+    <firebase-document
+        id="document"
+        app-name="tolerance-analysis"
+        path="[[editableNoteId]]"
+        data="{{editableNote}}">
+    </firebase-document>
   </template>
   <script>
     Polymer({
@@ -48,6 +55,14 @@
 
       signIn: function() {
         this.$.auth.signInWithPopup();
+      },
+
+      get notesPath() {
+        return '/notes/' + this.user.uid;
+      },
+
+      toEditableId: function(noteId) {
+        return this.notesPath + '/' + noteId;
       }
     });
   </script>
