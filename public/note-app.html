@@ -46,6 +46,31 @@
         path="[[editableNoteId]]"
         data="{{editableNote}}">
     </firebase-document>
+    <!-- query firebase data -->
+    <firebase-query
+        id="query"
+        app-name="tolerance-analysis"
+        path="/notes/[[user.uid]]"
+        data="{{notes}}">
+    </firebase-query>
+    <!-- manage offline notes -->
+    <app-indexeddb-mirror
+        session="[[user.uid]]"
+        key="notes"
+        data="{{notes}}"
+        persisted-data="{{persistedNotes}}">
+    </app-indexeddb-mirror>
+    <!-- display list of notes -->
+    <div class="notes">
+      <template is="dom-repeat" items="[[persistedNotes]]" as="note">
+        <na-note
+            id$="[[note.$key]]"
+            title="[[note.title]]"
+            body="[[note.body]]"
+            on-tap="edit">
+        </na-note>
+      </template>
+    </div>
   </template>
   <script>
     Polymer({
@@ -63,6 +88,10 @@
 
       toEditableId: function(noteId) {
         return this.notesPath + '/' + noteId;
+      },
+
+      get isEditable() {
+        return this.online;
       }
     });
   </script>
