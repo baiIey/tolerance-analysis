@@ -14,9 +14,9 @@
     </na-toolbar>
     <!-- login screen -->
     <na-login
-      on-sign-in="signIn"
-      signed-in="[[signedIn]]"
-      disabled="[[!online]]">
+        on-sign-in="signIn"
+        signed-in="[[signedIn]]"
+        disabled="[[!online]]">
     </na-login>
     <!-- incorporate firebase auth -->
     <firebase-auth
@@ -26,6 +26,19 @@
         signed-in="{{signedIn}}"
         user="{{user}}">
     </firebase-auth>
+    <!-- create floating action button -->
+    <paper-fab
+        icon="add"
+        on-tap="create"
+        disabled="[[!online]]"
+        aria-label="Add note">
+    </paper-fab>
+    <!-- create note editor -->
+    <na-editor
+        id="editor"
+        note="{{editableNote}}"
+        on-close="commitChange">
+    </na-editor>
   </template>
   <script>
     Polymer({
