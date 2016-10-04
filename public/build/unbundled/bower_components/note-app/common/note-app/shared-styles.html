@@ -1,0 +1,53 @@
+<html><head><link rel="import" href="/bower_components/paper-styles/color.html">
+<link rel="import" href="/bower_components/font-roboto/roboto.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+
+</head><body><dom-module id="note-app-shared-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: #e8e8e8;
+        height: 100vh;
+        @apply(--paper-font-common-base);
+
+        --paper-fab-background: var(--paper-teal-500);
+      }
+
+
+      .notes {
+        position: relative;
+        box-sizing: border-box;
+        padding: 1em;
+        max-height: calc(100vh - 46px);
+        overflow: auto;
+      }
+
+      na-note {
+        margin-bottom: 1em;
+      }
+
+      paper-fab {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+      }
+
+      @media (min-width: 640px) {
+        na-note {
+          max-width: 320px;
+          margin: 0 0.5em 1em;
+        }
+
+        .notes {
+          @apply(--layout-horizontal);
+          @apply(--layout-wrap);
+          justify-content: center;
+          align-content: space-around;
+        }
+      }
+    </style>
+  </template>
+</dom-module>
+</body></html>

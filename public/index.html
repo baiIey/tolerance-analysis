@@ -16,7 +16,6 @@
         margin: 0;
       }
     </style>
-    <!--Declare app dependencies-->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="bower_components/web-animations-js/web-animations.min.js"></script>
     <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
@@ -24,7 +23,6 @@
     <link rel="import" href="note-app.html">
   </head>
   <body>
-    <!--Configure service workers-->
     <platinum-sw-register
         auto-register
         skip-waiting
@@ -35,14 +33,12 @@
           default-cache-strategy="networkFirst">
       </platinum-sw-cache>
     </platinum-sw-register>
-    <!--Configure the Firebase app-->
     <firebase-app
         name="notes"
         api-key="AIzaSyCXtRcbbRBd0nJ9-zf70UC23JcYfkYd-kg"
         auth-domain="tolerance-analysis.firebaseapp.com"
         database-url="https://tolerance-analysis.firebaseio.com">
     </firebase-app>
-    <!--Instantiate app-->
     <note-app></note-app>
   </body>
 </html>
